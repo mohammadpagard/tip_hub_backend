@@ -152,9 +152,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Change default user model
 AUTH_USER_MODEL = 'accounts.User'
 
-# ckeditor config
+# CKEDITOR config
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
     }
 }
+
+# Google account
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'Enter your email@gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = "Enter you're host password"
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Tip Hub'

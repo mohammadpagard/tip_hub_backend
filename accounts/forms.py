@@ -111,3 +111,4 @@ class UserEditProfileForm(forms.Form):
     bio = forms.CharField(widget=CKEditorWidget(
         attrs={'class': 'form-control'}
     ))
+    image = forms.ImageField()

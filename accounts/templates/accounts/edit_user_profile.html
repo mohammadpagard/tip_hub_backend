@@ -12,7 +12,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-sm-9 col-md-11 col-lg-10">
                         <div class="user-panel custom-bg">
-                            <form action="" method="post">
+                            <form enctype="multipart/form-data" method="POST">
                                 {% csrf_token %}
                                 <div class="user-panel-box">
 
@@ -24,7 +24,7 @@
                                         {% endif %}
                                     </div>
                                     <div class="change-profile-btn">
-                                        <button class="btn custom-btn">تغییر عکس پروفایل</button>
+                                        {{ form.image }}
                                     </div>
                                     <!-- item -->
                                     <div class="user-panel-field">

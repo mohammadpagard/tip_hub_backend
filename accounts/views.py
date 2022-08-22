@@ -98,20 +98,23 @@ class UserEditProfileView(View):
                 'email': request.user.email,
                 'fullname': request.user.fullname,
                 'age': request.user.age,
-                'bio': request.user.bio
+                'bio': request.user.bio,
+                'image': request.user.image
             }
         )
         return render(request, self.template_name, {'form': form})
 
     def post(self, request):
         form = self.form_class(
-            request.POST,
+            data=request.POST,
+            files=request.FILES,
             initial={
                 'phone_number': request.user.phone_number,
                 'email': request.user.email,
                 'fullname': request.user.fullname,
                 'age': request.user.age,
-                'bio': request.user.bio
+                'bio': request.user.bio,
+                'image': request.user.image
             }
         )
         if form.is_valid():
@@ -121,6 +124,7 @@ class UserEditProfileView(View):
             request.user.fullname = cd['fullname']
             request.user.age = cd['age']
             request.user.bio = cd['bio']
+            request.user.image = cd['image']
             request.user.save()
         return redirect('accounts:profile', request.user.id)
 

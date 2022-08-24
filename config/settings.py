@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_cleanup.apps.CleanupConfig',
     'extensions',
+    'storages',
     # My apps
     'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
@@ -167,3 +168,13 @@ EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = "Enter you're host password"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Tip Hub'
+
+
+# Arvan cloud storages
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'e46eb70c-f5f5-4e79-b456-65a907c9a886'
+AWS_SECRET_ACCESS_KEY = 'df6ac31e34278fef6b734f11450221b9e9aebf00e6cfc0cfe8b94760cf3af7a9'
+AWS_S3_ENDPOINT_URL = 'https://s3.ir-thr-at1.arvanstorage.com'
+AWS_STORAGE_BUCKET_NAME = 'tip-hub'
+AWS_SERVICE_NAME = 's3'
+AWS_S3_FILE_OVERWRITE = False

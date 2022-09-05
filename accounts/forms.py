@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from ckeditor.widgets import CKEditorWidget
 # Local apps
 from .models import User
+from django.core import validators
 
 
 # User model customize
@@ -112,3 +113,17 @@ class UserEditProfileForm(forms.Form):
         attrs={'class': 'form-control'}
     ))
     image = forms.ImageField()
+
+
+class UserRegisterForm(forms.Form):
+    phone_number = forms.CharField(max_length=11, widget=forms.TextInput(
+        attrs={'class': 'email-input', 'placeholder': 'شماره تماس'}),
+                                   validators=[validators.MaxLengthValidator(11)]
+                                   )
+
+
+class CheckOtpForm(forms.Form):
+    phone_number = forms.CharField(max_length=11, widget=forms.TextInput(
+        attrs={'class': 'email-input', 'placeholder': 'کد تایید'}),
+                                   validators=[validators.MaxLengthValidator(4)]
+                                   )

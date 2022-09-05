@@ -2,7 +2,7 @@ from django.contrib.auth.models import BaseUserManager
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, phone_number, email, fullname, password):
+    def create_user(self, phone_number, password, email=None, fullname=None):
         if not phone_number:
             raise ValueError('User must have an phone number')
 

@@ -153,5 +153,5 @@ cython_debug/
 # Static Directory
 .idea
 .vscode
-assets/
+assets
 # End of https://www.toptal.com/developers/gitignore/api/django
